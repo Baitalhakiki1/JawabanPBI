@@ -1,0 +1,92 @@
+1. 3 DBMS yang bisa digunakan untuk mengelola big data
+
+   1. Oracle 
+   2. MongoDB
+   3. PostgreSQL
+
+2. Instalasi dan Membuat Database 
+
+   
+- Instalasi MongoDB 
+Step-1 Download the MongoDB MSI Installer Package
+
+Head over here and download the current version of MongoDB. 
+Make sure you select MSI as the package you want to download.
+
+Step-2 Install MongoDB with the Installation Wizard
+
+A. Make sure you are logged in as a user with Admin privileges. 
+Then navigate to your downloads folder and double click on the. msi package you just downloaded. 
+This will launch the installation wizard.
+B. Click Next to start installation.
+C. Accept the licence agreement then click Next.
+D. Select the Complete setup.
+E. Select “Run service as Network Service user” and make a note of the data directory, we’ll need this later.
+F. We won’t need Mongo Compass, so deselect it and click Next.
+G. Click Install to begin installation.
+F. Hit Finish to complete installation.
+
+Step-3 Create the Data Folders to Store our Databases
+A. Navigate to the C Drive on your computer using Explorer and create a new folder called data here.
+B. Inside the data folder you just created, create another folder called db.
+
+Step-4 Setup Alias Shortcuts for Mongo and Mongod
+Once installation is complete, we’ll need to set up MongoDB on the local system.
+A. Open up your Hyper terminal running Git Bash.
+B. Change directory to your home directory with the following command:
+   CD ~
+C. Here, we’re going to create a file called .bash_profile using the following command:
+   touch .bash_profile
+D. Open the newly created .bash_profile with vim using the following command:
+   vim .bash_profile
+E. In vim, hit the I key on the keyboard to enter insert mode.
+F. In your explorer go to C → Program Files → MongoDB → Server
+Now you should see the version of your MongoDB.
+G. Paste in the following code into vim, make sure your replace the 4.0 with your version that you see in explorer
+Hit the Escape key on your keyboard to exit the insert mode. Then type;
+   :wq!
+to save and exit Vim.
+
+
+Step-5 Verify That Setup was Successful
+A. Close down the current Hyper terminal and quit the application.
+B. Re-launch Hyper.
+C. Type the following commands into the Hyper terminal:
+Once you’ve hit enter
+
+This means that you have successfully installed and setup MongoDB on your local system!
+
+- Study kasus menggunakan MongoDB
+Langkah 1 :
+
+Masuk ke commad mongo dengan mengetikan pada terminal ubuntu anda
+
+"mongo"
+
+Langkah 2 :
+Buatlah sebuah database dengan nama "universitas" dengan mengetik
+
+"use universitas"
+
+Jika anda berhasil, maka anda akan menemukan informasi "switched to db universitas"
+
+Langkah 3 :
+Membuat field key unik untuk email
+
+"db.mahasiswa.createIndex({"email":1},{unique:true})"
+
+Langkah 4 :
+Menginputkan beberapa data pada collection "mahasiswa"
+
+"db.mahasiswa.insert({nim:"111",nama:"Ipung Purwono",email:"ipungofficial@hotmail.com",phone:"089812345678"})"
+
+"db.mahasiswa.insert({nim:"112",nama:"Joko Purwono",email:"jokoofficial@hotmail.com",phone:"089812345678"})"
+
+"db.mahasiswa.insert({nim:"113",nama:"Nenda Sabda",email:"nendaofficial@hotmail.com",phone:"089812345678"})"
+
+Saya telah memasukan 3 data pada collection mahasiswa
+
+Langkah 4 :
+Mengecek data yang sudah diinputkan apakah sudah masuk atau belum dengan mengetikan
+
+"db.mahasiswa.find().pretty()"
